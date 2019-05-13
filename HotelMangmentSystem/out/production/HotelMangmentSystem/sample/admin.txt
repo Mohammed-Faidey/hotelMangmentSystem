@@ -1,0 +1,130 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package hotel;
+
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author omar
+ */
+public class Admin extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+       try{
+        
+        Pane pane =new Pane();
+        
+         Image homeimg= new Image("image/AS3FTPIRJRBVZOQWREJDFKPS3A.jpg");
+         ImageView H =new ImageView(homeimg);
+            BackgroundImage HBG = new BackgroundImage(
+                homeimg, BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1017 , 691, false, false, false, false));
+            
+            pane.setBackground(new Background(HBG));
+        
+            
+        ImageView img1 = new ImageView("image/306473.png");
+        img1.setFitWidth(200);
+        img1.setFitHeight(155);
+        img1.setLayoutX(125);
+        img1.setLayoutY(123);
+        img1.setOpacity(0.84);
+        
+        
+       
+         Label label1 = new Label("Home");
+         label1.setLayoutX(180);
+         label1.setMinSize(img1.getFitWidth(), 30);
+         label1.setLayoutY(291); 
+
+        ImageView img2 = new ImageView("image/306473.png");
+        img2.setFitWidth(200);
+        img2.setFitHeight(155);
+        img2.setLayoutX(420);
+        img2.setLayoutY(123);
+        img2.setOpacity(0.84);
+         
+         Label label2 = new Label("Employees");
+         label2.setLayoutX(478);
+         label2.setMinSize(img2.getFitWidth(), 30);
+         label2.setLayoutY(291);
+
+        ImageView img3 = new ImageView("image/306473.png");
+        img3.setFitWidth(200);
+        img3.setFitHeight(155);
+        img3.setLayoutX(716);
+        img3.setLayoutY(123);
+        img3.setOpacity(0.84);
+
+        Label label3 = new Label("Customers ");
+        label3.setLayoutX(773);
+        label3.setMinSize(img3.getFitWidth(), 30);
+        label3.setLayoutY(291); 
+//        
+//        
+        ImageView img4 = new ImageView("image/306473.png");
+        img4.setFitWidth(200);
+        img4.setFitHeight(155);
+        img4.setLayoutX(260);
+        img4.setLayoutY(339);
+        img4.setOpacity(0.84);
+        
+        Label label4 = new Label("Logout");
+        label4.setLayoutX(317);
+        label4.setMinSize(img4.getFitWidth(), 30);
+        label4.setLayoutY(510); 
+
+        ImageView img5 = new ImageView("image/306473.png");
+        img5.setFitWidth(200);
+        img5.setFitHeight(155);
+        img5.setLayoutX(591);
+        img5.setLayoutY(339);
+        img5.setOpacity(0.84);
+        
+         Label label5 = new Label("Exit");
+        label5.setLayoutX(648);
+        label5.setMinSize(img5.getFitWidth(), 30);
+        label5.setLayoutY(510); 
+        
+         pane.getChildren().addAll(img1,label1,img2,label2,img3,label3,img4,label4,img5,label5);
+        
+        Scene scene =new Scene(pane,1017,677);
+         primaryStage.setScene(scene);
+        primaryStage.setTitle("Home Screen");
+        primaryStage.setResizable(false);
+       
+        primaryStage.show();
+        
+       
+        
+     }catch(Exception e){
+         System.out.println(e);
+     }
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}

@@ -1,0 +1,110 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package rooms;
+
+import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.TreeTableView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundPosition;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author omar
+ */
+public class Cusrimers extends Application {
+    
+    @Override
+    public void start(Stage primaryStage) {
+       
+        AnchorPane root =new AnchorPane();
+        
+         Image CImg= new Image("AS3FTPIRJRBVZOQWREJDFKPS3A.jpeg");
+         ImageView C =new ImageView(CImg);
+            BackgroundImage CBG = new BackgroundImage(
+               CImg, BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                new BackgroundSize(1171 , 730, false, false, false, false));
+            
+            root.setBackground(new Background(CBG));
+            
+              TreeTableView ttv =new TreeTableView();
+        AnchorPane.setTopAnchor(ttv, 15.0);
+        AnchorPane.setBottomAnchor(ttv, 203.0);
+        AnchorPane.setRightAnchor(ttv,15.0);
+        AnchorPane.setLeftAnchor(ttv,15.0);
+        ttv.setPrefWidth(1336);
+        ttv.setPrefHeight(512);
+        ttv.setLayoutX(21);
+        ttv.setLayoutY(14);
+        ttv.setOpacity(0.64);
+        
+        Pane pane =new Pane();
+        AnchorPane.setTopAnchor(pane, 555.0);
+        AnchorPane.setBottomAnchor(pane, 15.0);
+        AnchorPane.setRightAnchor(pane,15.0);
+        AnchorPane.setLeftAnchor(pane,15.0);
+        pane.setPrefWidth(260);
+        pane.setPrefHeight(160);
+        pane.setLayoutX(34);
+        pane.setLayoutY(567);  
+        pane.setOpacity(0.64);
+        
+        Button bt1 =new Button("Back");
+        bt1.setPrefWidth(80);
+        bt1.setPrefHeight(30);
+        bt1.setLayoutX(194);
+        bt1.setLayoutY(29);
+        bt1.setStyle("-fx-background-color: #09e2");
+        
+        Button bt2 =new Button("Search");
+        bt2.setPrefWidth(80);
+        bt2.setPrefHeight(30);
+        bt2.setLayoutX(429);
+        bt2.setLayoutY(29);
+        bt2.setStyle("-fx-background-color: #09e2");
+        
+        
+       TextField tf =new TextField("search by room number");
+       tf.setPrefHeight(269);
+       tf.setPrefWidth(38);
+       tf.setLayoutX(633);
+       tf.setLayoutY(29);
+       tf.setFont(Font.font("System", FontPosture.REGULAR, 14));
+       tf.setOpacity(0.66);
+       pane.getChildren().addAll(bt1,bt2,tf);
+       root.getChildren().addAll(ttv,pane);
+       Scene scene=new Scene(root,1171,730);
+       primaryStage.setTitle("Customer Screen");
+       primaryStage.setScene(scene);
+       primaryStage.show();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
+
